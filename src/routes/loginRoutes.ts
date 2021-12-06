@@ -20,21 +20,7 @@ const router = Router();
     res.send('ahoy there');
 })*/
 
-router.get('/login', (req: Request, res: Response) => {
-    res.send(`
-        <form method="POST">
-            <div>
-                <label>Email</label>
-                <input name="email" />
-            </div>
-            <div>
-                <label>Password</label>
-                <input name="password" type="password" />
-            </div>
-            <button>Submit</button
-        </form>
-    `);
-})
+
 
 router.post('/login', (req: RequestWithBody, res: Response) => {
     const { email, password } = req.body;
@@ -48,6 +34,7 @@ router.post('/login', (req: RequestWithBody, res: Response) => {
         res.send('Invalid email or password');
     }
 });
+
 
 router.get('/', (req: Request, res: Response) => {
     
@@ -63,7 +50,7 @@ router.get('/', (req: Request, res: Response) => {
             <div>
                 <div>You are not logged in</div>
                 <a href="/login">Login</a>
-            </div>
+            </div> 
         `);
     }
 })
